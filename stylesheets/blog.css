@@ -1,0 +1,21 @@
+.blog-area {
+  width: 728px;
+  height: 700px;
+  background-color: #efe5d0;
+  display: inline-block;
+  border:none;
+  margin-right: 250px;
+  padding: none;
+}
+
+.sidebar {
+  background-color: #efe5d0;
+  position: absolute;
+  height: 950px;
+  width: 250px;
+  left:  740px;
+  top: 10px;
+  border: none;
+  padding: none;
+  margin: none;
+}

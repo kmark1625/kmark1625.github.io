@@ -1,57 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Kevin Mark's Website</title>
-  </head>
-  <body>
-    <header>
-      <img src="#" alt="Profile picture">
-      <h1>Kevin Mark</h1>
-      <h2>Web Design</h2>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="#">About me</a></li>
-        <li><a href="#">Resume</a></li>
-        <li><a href="#">Social Networks</a></li>
-        <li><a href="#">Contact me</a></li>
-      </ul>
-    </nav>
-    <main>
-      <div class="Main Display">
-        <div class="Projects">
-          <div class="Project 1">
-            <p>This is a description of a project.<p>
-          </div>
-          <div class="Project 2">
-            <p>This is a description of a project.<p>
-          </div>
-          <div class="Project 3">
-            <p>This is a description of a project.<p>
-          </div>
-        </div>
-        <div class="Blog">
-          <div class="Blog Post 1">
-            <article>
-              <h2>Blog Post 1</h2>
-              <p>This is a sample blog post.</p>
-            </article>
-          </div>
-          <div class="Blog Post 2">
-            <article>
-              <h2>Blog Post 2</h2>
-              <p>This is a sample blog post.</p>
-            </article>
-          </div>
-          <div class="Blog Post 3">
-            <article>
-              <h2>Blog Post 3</h2>
-              <p>This is a sample blog post.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-     </main>
-  </body>
+	<head>
+		<meta charset="utf-8">
+		<title>Kevin Mark's Personal Website</title>
+		<link type="text/css" rel="stylesheet" href="../stylesheets/default.css">
+		<link type="text/css" rel="stylesheet" href="../stylesheets/blog.css">
+	</head>
+	<body>
+		<header id="header">
+			<img src="../imgs/Kevin-Mark-Header_128.gif" alt="Kevin Mark's Personal Website">
+		</header>
+		<nav>
+			<ul>
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="about/about.html">ABOUT</a></li>
+				<li><a href="about/resume.html">RESUME</a></li>
+				<li><a href="about/contact.html">CONTACT ME</a></li>
+			</ul>
+		</nav>
+			<div class="blog-area">
+				<article>
+					<h1>Inline vs Inline-Block</h1>
+					<h2>What does it mean to display inline vs using inline block</h2>
+					<p>The display property can be used to control the layout on a page.  Each element has a default display value which is typically block or inline.</p>
+					<p>Block elements start on a new line and take up the full width available.  Some block elements are div, h1-h6, p, form, header, footer, section.</p>
+					<p>Inline elements do not start on a new line and take up as much space as is available.  Examples of inline elements are span, a, img.</p>
+					<p>Display none is used to hide an element - typically used with JavaScript to hide elements under certain conditions.</p>
+					<p>The default display values can be overridden.  This only affects the display value of the item and not the element kind.</p>
+					<p>inline-block elements allow elements to sit to their right and left and respect top and bottom margins and respect height and width.</p>
+				</article>
+			</div>
+			<div class="sidebar">
+				<h2>Sample text</h2>
+				<p> sample text 2</h2>
+			</div>
+		<footer>
+		</footer>
+	</body>
 </html>
+
