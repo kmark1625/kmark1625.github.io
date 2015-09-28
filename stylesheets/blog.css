@@ -18,4 +18,9 @@
   border: none;
   padding: none;
   margin: none;
+  text-align: center;
+}
+
+p a {
+  text-size: 1em;
 }
