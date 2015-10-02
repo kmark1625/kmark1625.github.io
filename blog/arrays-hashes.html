@@ -20,14 +20,21 @@
 		</nav>
 			<div class="blog-area">
 				<article>
-					<h1>Inline vs Inline-Block</h1>
-					<h2>What does it mean to display inline vs using inline block</h2>
-					<p>The display property can be used to control the layout on a page.  Each element has a default display value which is typically block or inline.</p>
-					<p>Block elements start on a new line and take up the full width available.  Some block elements are div, h1-h6, p, form, header, footer, section.</p>
-					<p>Inline elements do not start on a new line and take up as much space as is available.  Examples of inline elements are span, a, img.</p>
-					<p>Display none is used to hide an element - typically used with JavaScript to hide elements under certain conditions.</p>
-					<p>The default display values can be overridden.  This only affects the display value of the item and not the element kind.</p>
-					<p>inline-block elements allow elements to sit to their right and left and respect top and bottom margins and respect height and width.</p>
+					<h1>Arrays vs Hashes</h1>
+					<h2>What is the difference between the two?</h2>
+					<p>Arrays are very useful for holding a collection of items in an ordered and sequential way. Hashes, on the other hand, are more useful for carrying a collection of items that can be identified by a key value. One example of a time to use an array would be to store a sequence of numbers, such as the first ten odd numbers. You might populate this array with the following code and then later use the array to quickly do calculations:</p>
+					<p><pre><code>
+						odds = (1..20).step(2).to_a
+						sum_of_odds = odds.inject(:+)
+						prod_of_odds = odds.inject(:*)
+					</code></pre></p>
+					<p>Hashes would be more useful for storing something like the grades for every student in the class.  You could then recall a given student by their name and return what their grade in the class is.  This could be accomplished with the following code:
+					</p>
+					<pre><code>
+						grades = {"Boris" => 90, "Al" => 80, "Amy" => 85}
+						puts grades["Boris"}
+						puts grades["Amy"]
+					</code></pre>
 				</article>
 			</div>
 		<footer>

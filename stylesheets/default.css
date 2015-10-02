@@ -24,6 +24,15 @@ nav ul li.selected {
 	background-color: #efe5d0;
 	width: 728px;
 }
+pre {
+	margin-left: 10px;
+	padding-left: 0px;
+}
+
+code {
+	margin-left: 10px;
+	padding-left: 0px;
+}
 
 .main-menu {
 	background-color: yellow;
