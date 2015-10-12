@@ -1,3 +1,7 @@
+p a {
+  text-size: 1em;
+}
+
 .blog-area {
   width: 728px;
   height: 700px;
@@ -8,19 +12,3 @@
   padding: none;
 }
 
-.sidebar {
-  background-color: #efe5d0;
-  position: absolute;
-  height: 950px;
-  width: 250px;
-  left:  740px;
-  top: 10px;
-  border: none;
-  padding: none;
-  margin: none;
-  text-align: center;
-}
-
-p a {
-  text-size: 1em;
-}

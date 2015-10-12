@@ -1,0 +1,26 @@
+<canvas id="ctx" width="500" height="500" style="border: 1px solid #000000;"></canvas>
+<script type="text/javascript">
+  var ctx = document.getElementById("ctx").getContext("2d");
+
+  //1. Modify Settings =
+  ctx.font = '30px Arial';  //Font used
+
+  var x = 50;
+  var spdX = 40;
+  var y = 50;
+  var spdY = 5
+
+  function update() {
+    x += spdX;
+    y += spdY;
+    ctx.fillText('P', x, y);
+    console.log('hello', x);
+
+    if (y > 500) {
+      console.log("Out of Bounds!")
+    }
+  }
+
+  setInterval(update, 500)
+
+</script>
