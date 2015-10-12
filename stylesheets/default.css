@@ -1,47 +1,9 @@
-nav {
-	background-color: #efe5d0;
-	margin: 0px 0px 5px 0px;
-	width: 728px;
-}
-nav ul {
-	margin: 0px;
-	list-style-type: none;
-	padding: 5px 0px 5px 0px;
-}
-nav ul li {
-	display: inline;
-	padding: 5px 0px 5px 0px;
-}
-nav ul li a:link, nav ul li a:visited {
-	color: #954b4b;
-	border-bottom: none;
-	font-weight=bold;
-}
-nav ul li.selected {
-	background-color: #c8b99c;
-}
-.menu-row {
-	background-color: #efe5d0;
-	width: 728px;
-}
-pre {
-	margin-left: 10px;
-	padding-left: 0px;
+h1, h2 {
+	color: gray;
 }
 
-code {
-	margin-left: 10px;
-	padding-left: 0px;
-}
-
-.main-menu {
-	background-color: yellow;
-	width: 300px;
-	height: 300px;
-	margin: 25px;
-	border: 3px solid black;
-	display: inline-block;
-	text-align: center;
+p {
+	color: black;
 }
 
 body {
@@ -56,13 +18,46 @@ footer {
 	clear: both;
 }
 
-h1, h2 {
-	color: gray;
+nav {
+	background-color: #efe5d0;
+	margin: 0px 0px 5px 0px;
+	width: 728px;
 }
 
+nav ul {
+	margin: 0px;
+	list-style-type: none;
+	padding: 5px 0px 5px 0px;
+}
 
-p {
-	color: black;
+nav ul li {
+	display: inline;
+	padding: 5px 0px 5px 0px;
+}
+
+nav ul li a:link, nav ul li a:visited {
+	color: #954b4b;
+	border-bottom: none;
+	font-weight=bold;
+}
+
+nav ul li.selected {
+	background-color: #c8b99c;
+}
+
+.menu-row {
+	background-color: #efe5d0;
+	width: 728px;
+}
+
+.main-menu {
+	background-color: yellow;
+	width: 300px;
+	height: 300px;
+	margin: 25px;
+	border: 3px solid black;
+	display: inline-block;
+	text-align: center;
 }
 
 div a {
@@ -76,4 +71,14 @@ div a {
 
 div a:hover{
 	color: blue;
+}
+
+pre {
+	margin-left: 10px;
+	padding-left: 0px;
+}
+
+code {
+	margin-left: 10px;
+	padding-left: 0px;
 }
