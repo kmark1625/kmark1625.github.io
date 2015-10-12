@@ -23,17 +23,17 @@
 					<h1>Arrays vs Hashes</h1>
 					<h2>What is the difference between the two?</h2>
 					<p>Arrays are very useful for holding a collection of items in an ordered and sequential way. Hashes, on the other hand, are more useful for carrying a collection of items that can be identified by a key value. One example of a time to use an array would be to store a sequence of numbers, such as the first ten odd numbers. You might populate this array with the following code and then later use the array to quickly do calculations:</p>
-					<p><pre><code>
-						odds = (1..20).step(2).to_a
-						sum_of_odds = odds.inject(:+)
-						prod_of_odds = odds.inject(:*)
-					</code></pre></p>
+					<pre><code>
+	odds = (1..20).step(2).to_a
+	sum_of_odds = odds.inject(:+)
+	prod_of_odds = odds.inject(:*)
+					</code></pre>
 					<p>Hashes would be more useful for storing something like the grades for every student in the class.  You could then recall a given student by their name and return what their grade in the class is.  This could be accomplished with the following code:
 					</p>
 					<pre><code>
-						grades = {"Boris" => 90, "Al" => 80, "Amy" => 85}
-						puts grades["Boris"}
-						puts grades["Amy"]
+	grades = {"Boris" => 90, "Al" => 80, "Amy" => 85}
+	puts grades["Boris"}
+	puts grades["Amy"]
 					</code></pre>
 				</article>
 			</div>
