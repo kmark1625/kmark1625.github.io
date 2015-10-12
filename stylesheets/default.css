@@ -1,13 +1,15 @@
-h1, h2 {
-	color: gray;
-}
-
-p {
-	color: black;
-}
-
 body {
-	font-family: sans-serif;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: small;
+	line-height: 1.6em;
+}
+
+h1 {
+	font-size: 150%;
+}
+
+h2 {
+	font-size: 130%;
 }
 
 footer {
@@ -21,7 +23,8 @@ footer {
 nav {
 	background-color: #efe5d0;
 	margin: 0px 0px 5px 0px;
-	width: 728px;
+	padding-left: 5px;
+	width: 723px;
 }
 
 nav ul {
@@ -41,10 +44,6 @@ nav ul li a:link, nav ul li a:visited {
 	font-weight=bold;
 }
 
-nav ul li.selected {
-	background-color: #c8b99c;
-}
-
 .menu-row {
 	background-color: #efe5d0;
 	width: 728px;
@@ -60,7 +59,7 @@ nav ul li.selected {
 	text-align: center;
 }
 
-div a {
+a.main-menu-text {
 	position: relative;
 	top: 120px;
 	color: gray;
@@ -69,16 +68,6 @@ div a {
 	text-decoration: none;
 }
 
-div a:hover{
+a.main-menu-text:hover{
 	color: blue;
-}
-
-pre {
-	margin-left: 10px;
-	padding-left: 0px;
-}
-
-code {
-	margin-left: 10px;
-	padding-left: 0px;
 }
