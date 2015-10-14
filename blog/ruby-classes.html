@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Kevin Mark's Personal Website</title>
+		<link type="text/css" rel="stylesheet" href="../stylesheets/default.css">
+		<link type="text/css" rel="stylesheet" href="../stylesheets/blog.css">
+	</head>
+	<body>
+		<header id="header">
+			<img src="../imgs/Kevin-Mark-Header_128.gif" alt="Kevin Mark's Personal Website">
+		</header>
+		<nav>
+			<ul>
+				<li><a href="../index.html">HOME</a></li>
+				<li><a href="about/about.html">ABOUT</a></li>
+				<li><a href="about/resume.html">RESUME</a></li>
+				<li><a href="about/contact.html">CONTACT ME</a></li>
+			</ul>
+		</nav>
+			<div class="blog-area">
+				<article>
+					<h1>Classes</h1>
+					<h2>What is a class and why should you use it?</h2>
+					<p>A class is a way to define the properties and behaviors of a set of objects. You can think of classes as a sort of factory that can produce an object of a certain specification. In the class definition you can simply supply the "blueprint" for the type of object you want to make and what properties it has. When creating a new object of this class, the object will have all of the properties and behaviors specified by the blueprint.</p>
+					<p>As an example, we'll take a look at a class definition used to model a TV. First, you can consider some properties of a TV such as the size of the screen, the brand, and the type. These properties can be defined in Ruby using instance variables (specified with the @ symbol). Next, you can look at some behaviors you might want the TV to have such as the ability to turn on or off, adjust the volume, or change the channel. These can be defined inside the class definition just as you would declare a normal method.</p>
+					<pre><code>
+	class Television {
+		attr_accessor :channel
+		def initialize(brand, type, size)
+			@brand = brand
+			@type = type
+			@size = size
+			@channel = 0
+			@status = false
+		end
+		def powerButton
+			@status = !@status
+		end
+		def changeChannel(channel)
+			@channel = channel
+		end
+	}
+					</code></pre>
+				</article>
+			</div>
+		<footer>
+			<p>Copyright &copy Kevin Mark. All Rights Reserved.</p>
+		</footer>
+	</body>
+</html>
+
