@@ -1,4 +1,4 @@
-.blog-area {
+.project-area {
   width: 698px;
   height: 700px;
   background-color: #efe5d0;
@@ -8,9 +8,9 @@
   padding-right: 15px;
 }
 
-pre {
-  margin: 0px;
-  padding: 0px;
-  border: 1px solid black;
+.project {
+  border: 1px black solid;
+  background-color: AliceBLue;
+  padding-left: 5px;
+  padding-right: 5px;
 }
-
