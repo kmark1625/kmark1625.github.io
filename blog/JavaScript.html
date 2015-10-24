@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Kevin Mark's Personal Website</title>
+		<link type="text/css" rel="stylesheet" href="../stylesheets/default.css">
+		<link type="text/css" rel="stylesheet" href="../stylesheets/blog.css">
+	</head>
+	<body>
+		<header id="header">
+			<img src="../imgs/Kevin-Mark-Header_128.gif" alt="Kevin Mark's Personal Website">
+		</header>
+		<nav>
+			<ul>
+				<li><a href="../index.html">HOME</a></li>
+				<li><a href="about/about.html">ABOUT</a></li>
+				<li><a href="about/resume.html">RESUME</a></li>
+				<li><a href="about/contact.html">CONTACT ME</a></li>
+			</ul>
+		</nav>
+			<div class="blog-area">
+				<article>
+					<h1>Ruby vs Javascript - Functions</h1>
+					<h2>What's so special about JavaScript functions anyways?</h2>
+					<p>When first learning JavaScript, you may have noticed that functions look a lot like functions or methods in Ruby. The syntax for defining them seem to look very similar, in fact. Below is a simple example of a function in both Ruby and JavaScript that will add one to an input.</p>
+					<pre><code>
+	# Ruby
+	def addOne(num)
+		return num + 1;
+	end
+					</code></pre>
+					<pre><code>
+	// JavaScript
+	function addOne(num) {
+		return num + 1;
+	}
+					</code></pre>
+					<p>Functions in JavaScript are a little bit more special. They are what we refer to as first-class. Ruby's functions are not first-class (although there are procs which are). What makes first-class functions special is that they can be used as values, returned, and even passed into other functions. Below is a really interesting example of us using all three characteristics of functions (assigning a function to a variable, returning a function, passing a function to a variable).
+					</p>
+					<pre><code>
+	// JavaScript
+	function addOrSubtractN(n, operation) {
+		if (operation === "add") {
+			return function(num) { return num + n; }
+		} else {
+			return function(num) { return num -n; }
+		}
+	}
+	var addOneFunction = addOrSubtract(1, "add");
+	console.log(addOneFunction(5)); // Returns 6
+					</code></pre>
+				</article>
+			</div>
+		<footer>
+			<p>Copyright &copy Kevin Mark. All Rights Reserved.</p>
+		</footer>
+	</body>
+</html>
+
