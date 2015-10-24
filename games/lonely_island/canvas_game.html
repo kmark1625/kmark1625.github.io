@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>The lonely island</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/default.css">
+  </head>
+  <body>
+
+    <div id="titleScreen">
+      <h1>The Lonely Island</h1>
+      <input id="startButton" type="button" value="Start"/>
+      <br>
+      <input id="helpButton" type="button" value="How To Play"/>
+      <br>
+      <input id="creditsButton" type="button" value="Credits"/>
+    </div>
+
+    <div id="creditScreen">
+      <h1>Credits</h1>
+      <p>This game was designed and created by Kevin Mark. Artwork was used from ...</p>
+      <input class="titleButton" type="button" value="Return to main menu"/>
+    </div>
+
+    <div class="helpScreen">
+      <h2>How to play</h2>
+      <table id="npcTable">
+        <tr>
+          <td><div class="npcWrapper">
+            <img class="npcImage" id="marshall" src="images/npcs.png">
+          </div></td>
+          <td><p>100 points</p></td>
+          <td><div class = "npcWrapper">
+            <img class="npcImage" id="andrew" src="images/npcs.png">
+          </div></td>
+          <td><p>500 points</p></td>
+        </tr>
+        <tr>
+          <td><div class="npcWrapper">
+            <img class="npcImage" id="sam" src="images/npcs.png">
+          </div></td>
+          <td><p>200 points</p></td>
+          <td><div class = "npcWrapper">
+           <img class="npcImage" id="hunter" src="images/npcs.png">
+          </div></td>
+          <td><p>600 points</p></td>
+        </tr>
+        <tr>
+          <td><div class="npcWrapper">
+            <img class="npcImage" id="sal" src="images/npcs.png">
+          </div></td>
+          <td><p>300 points</p></td>
+          <td><div class = "npcWrapper">
+            <img class="npcImage" id="hannah" src="images/npcs.png">
+          </div></td>
+          <td><p>700 points</p></td>
+        </tr>
+        <tr>
+          <td><div class="npcWrapper">
+            <img class="npcImage" id="darien" src="images/npcs.png">
+          </div></td>
+          <td><p>400 points</p></td>
+          <td><div class = "npcWrapper">
+            <img class="npcImage" id="faith" src="images/npcs.png">
+          </div></td>
+          <td><p>800 points</p></td>
+        </tr>
+        <tr>
+          <td><div class="npcWrapper">
+            <img class="npcImage" id="alien" src="images/monster.png">
+          </div></td>
+          <td><p>Avoid at all costs</p></td>
+        </tr>
+      </table>
+      <br>
+      <input class="titleButton" type="button" value="Return to main menu"/>
+    </div>
+    <script src="js/game.js"></script>
+  </body>
+</html>
