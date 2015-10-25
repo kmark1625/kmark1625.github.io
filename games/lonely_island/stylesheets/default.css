@@ -23,44 +23,11 @@
   top: 0;
   left: 0;
 }
-#marshall {
-  /*
-  top: 70px;
-  left: 20px;
-  */
+#dino {
   clip:rect(0 30px 30px 0);
 }
-#sam {
-  left: -30px;
-  clip:rect(0px 60px 30px 30px);
-}
-#sal {
-  left: -63px;
-  clip:rect(0px 90px 30px 60px);
-}
-#darien {
-  left: -95px;
-  clip:rect(0 120px 30px 90px);
-}
-#andrew {
-  left: -127px;
-  clip:rect(0 150px 30px 120px);
-}
-#hunter {
-  left: -159px;
-  clip:rect(0 180px 30px 150px);
-}
-#hannah {
-  top: -30px;
-  clip:rect(30px 25px 60px 0px);
-}
-#faith {
-  top: -30px;
-  left: -32px;
-  clip:rect(30px 60px 60px 25px);
-}
-#alien {
-  clip:rect(0px 30px 30px 0px);
+#tree {
+  clip:rect(0px 100px 80px 0px);
 }
 .npcWrapper {
   position: relative;
