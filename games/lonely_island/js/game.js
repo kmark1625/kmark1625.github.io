@@ -1,3 +1,4 @@
+// Navigates Title Screen, Help Screen, and Credit Screen
 // Title Screen
 $("#creditsButton").click(function () {
   $("#titleScreen").hide();
