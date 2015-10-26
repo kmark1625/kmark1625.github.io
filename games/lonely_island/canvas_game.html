@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>The lonely island</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/default.css">
+  </head>
+  <body>
+
+    <div id="titleScreen">
+      <h1>The Lonely Island</h1>
+      <input id="startButton" type="button" value="Start"/>
+      <br>
+      <input id="helpButton" type="button" value="How To Play"/>
+      <br>
+      <input id="creditsButton" type="button" value="Credits"/>
+    </div>
+
+    <div id="creditScreen">
+      <h1>Credits</h1>
+      <p>This game was designed and created by Kevin Mark. Artwork was used from ...</p>
+      <input class="titleButton" type="button" value="Return to main menu"/>
+    </div>
+
+    <div class="helpScreen">
+      <h2>How to play</h2>
+      <table id="npcTable">
+        <tr>
+          <td><div class="npcWrapper">
+            <img class="npcImage" id="egg" src="images/egg.png">
+          </div></td>
+          <td><p>1 point</p></td>
+        </tr>
+        <tr>
+          <td><div class="npcWrapper">
+            <img class="npcImage" id="tree" src="images/tree.png">
+          </div></td>
+          <td><p>Avoid at all costs</p></td>
+        </tr>
+      </table>
+      <br>
+      <input class="titleButton" type="button" value="Return to main menu"/>
+    </div>
+    <script src="js/game.js"></script>
+  </body>
+</html>
