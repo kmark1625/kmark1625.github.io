@@ -66,13 +66,13 @@ npcImage.onload = function() {
 };
 npcImage.src = "images/egg.png";
 
-// Monster Image
-var monsterReady = false;
-var monsterImage = new Image();
-monsterImage.onload = function() {
-  monsterReady = true;
+// Tree Image
+var treeReady = false;
+var treeImage = new Image();
+treeImage.onload = function() {
+  treeReady = true;
 };
-monsterImage.src = "images/tree.png";
+treeImage.src = "images/tree.png";
 
 var initTail = new TailLink(73, 46, "down");
 
@@ -108,6 +108,7 @@ function TailLink(x, y, direction) {
   this.x = x;
   this.y = y;
   this.direction = direction;
+  this.next_direction = direction;
   this.next;
 }
 
@@ -118,21 +119,39 @@ TailLink.prototype.drawTailLink = function() {
   }
 };
 
-TailLink.prototype.updateLocation = function(x, y, direction) {
-  this.x = x;
-  this.y = y;
-  this.direction=direction;
+TailLink.prototype.updateLocation = function(direction, modifier) {
+  this.direction = this.next_direction;
+  this.next_direction=direction;
+  if (this.direction === "down"){
+      this.y += dino.speed*modifier;
+      if (this.next) {this.next.updateLocation(direction, modifier);}
+  } else if (this.direction === "up") {
+      this.y -= dino.speed*modifier;
+      if (this.next) {this.next.updateLocation(direction, modifier);}
+  } else if (this.direction == "left") {
+      this.x -= dino.speed*modifier;
+      if (this.next) {this.next.updateLocation(direction, modifier);}
+  } else if (this.direction == "right") {
+      this.x += dino.speed*modifier;
+      if (this.next) {this.next.updateLocation(direction, modifier);}
+  }
+  /*
   if (this.next) {
-    if (direction === "down"){
-      this.next.updateLocation(this.x, this.y-20, direction);
-    } else if (direction === "up") {
-      this.next.updateLocation(this.x, this.y+20, direction);
-    } else if (direction == "left") {
-      this.next.updateLocation(this.x-20, this.y, direction);
-    } else if (direction == "right") {
-      this.next.updateLocation(this.x+20, this.y, direction);
+    if (this.direction === "down"){
+      this.y += dino.speed*modifier;
+      this.next.updateLocation(direction, modifier);
+    } else if (this.direction === "up") {
+      this.y -= dino.speed*modifier;
+      this.next.updateLocation(direction, modifier);
+    } else if (this.direction == "left") {
+      this.x -= dino.speed*modifier;
+      this.next.updateLocation(direction, modifier);
+    } else if (this.direction == "right") {
+      this.x += dino.speed*modifier;
+      this.next.updateLocation(direction, modifier);
     }
   }
+  */
 };
 
 TailLink.prototype.addTailLink = function() {
@@ -179,13 +198,13 @@ NPC.prototype.newLocation = function() {
 
 var npc = new NPC(200, 100);
 
-// Collection of enemies
-function Monster(x, y) {
+// Collection of trees
+function Tree(x, y) {
   this.x = x;
   this.y = y;
 }
 
-var monsters = [];
+var trees= [];
 
 // Handle keyboard controls
 var keysDown = {};
@@ -200,35 +219,35 @@ var update = function (modifier) {
     dino.direction = "up";
     dino.y -= dino.speed * modifier;
     dino.setImageLocation("up");
-    dino.tail.updateLocation(dino.x + 23, dino.y + 45, "up");
+    dino.tail.updateLocation("up", modifier);
   }
   if (40 in keysDown) { // Player holding down
     dino.direction = "down";
     dino.y += dino.speed * modifier;
     dino.setImageLocation("down");
-    dino.tail.updateLocation(dino.x + 23, dino.y - 4, "down");
+    dino.tail.updateLocation("down", modifier);
   }
   if (37 in keysDown) { // Player holding left
     dino.direction = "left";
     dino.x -= dino.speed * modifier;
     dino.setImageLocation("left");
-    dino.tail.updateLocation(dino.x + 40, dino.y + 20, "up");
+    dino.tail.updateLocation("left", modifier);
   }
   if (39 in keysDown) { // Player holding right
     dino.direction = "right";
     dino.x += dino.speed * modifier;
     dino.setImageLocation("right");
-    dino.tail.updateLocation(dino.x + 5, dino.y + 20, "up");
+    dino.tail.updateLocation("right", modifier);
   }
 
   // Collision detection
-  // Detecting enemy collision
-  for (var i=0; i<monsters.length; i++) {
+  // Detecting tree collision
+  for (var i=0; i<trees.length; i++) {
     if (
-      dino.x <= (monsters[i].x + 20)
-      && monsters[i].x <= (dino.x + 20)
-      && dino.y <= (monsters[i].y + 20)
-      && monsters[i].y <= (dino.y + 20)
+      dino.x <= (trees[i].x + 20)
+      && trees[i].x <= (dino.x + 20)
+      && dino.y <= (trees[i].y + 20)
+      && trees[i].y <= (dino.y + 20)
     ) {
      gameOver();
     }
@@ -250,7 +269,7 @@ var update = function (modifier) {
       && npc.y <= (dino.y + 32)
   ) {
     npc.newLocation();
-    monsters.push(new Monster(32 + (Math.random() * (canvas.width - 64)), 32 + (Math.random() * (canvas.height - 64))));
+    trees.push(new Tree(32 + (Math.random() * (canvas.width - 64)), 32 + (Math.random() * (canvas.height - 64))));
     dino.tail.addTailLink();
     points++;
     console.log(points);
@@ -273,9 +292,9 @@ var render = function() {
     dino.tail.drawTailLink();
   }
 
-  if (monsterReady){
-    for (var i=0; i < monsters.length; i++) {
-      context.drawImage(monsterImage, 0, 0, 80, 100, monsters[i].x, monsters[i].y, 32, 32);
+  if (treeReady){
+    for (var i=0; i < trees.length; i++) {
+      context.drawImage(treeImage, 0, 0, 80, 100, trees[i].x, trees[i].y, 32, 32);
     }
   }
 
