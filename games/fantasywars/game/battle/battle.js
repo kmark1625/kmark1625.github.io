@@ -137,8 +137,9 @@ Battle.prototype.animateMovement = function() {
         that.currentCaptureTile = this.currentSelectedTile;
       }
     }
-
-    this.renderAttackHighlights();
+    if (!this._isComputerTurn()) {
+      this.renderAttackHighlights();
+    };
   }
 };
 
@@ -284,6 +285,8 @@ Battle.prototype._clickListenerTurnStateSelectingMoveHelper = function(mousePos)
     this.currentSelectedMovement = [];
   } else {
     if (!this.currentSelectedUnit.movedThisTurn && this.currentSelectedUnit.player === this.currentPlayer) {
+      var moveSound = this.currentSelectedUnit.moveSound;
+      moveSound.play();
       this.turnState = "animatingMovement";
       this.currentSelectedUnit.walkPath = squareToMoveTo.getPath();
     }
@@ -333,7 +336,9 @@ Battle.prototype._clickListenerTurnStateSelectingUnitHelper = function(mousePos)
       // get possible moves
       this.currentSelectedMovement = this.currentSelectedUnit.getPossibleMoves(this.currentSelectedUnit.pos, this.map, this.enemyPositions());
       this.turnState = "selectingMove";
-      this.renderMoveHighlights();
+      if (!this._isComputerTurn()) {
+        this.renderMoveHighlights();
+      };
     };
   }
   else {
@@ -344,16 +349,17 @@ Battle.prototype._clickListenerTurnStateSelectingUnitHelper = function(mousePos)
 
 Battle.prototype._clickListenerTurnStateBuildUnitHelper = function(mousePos) {
   var unit = this.buildScreen.onClick(mousePos);
-  console.log(unit);
   if(unit) {
     unit.movedThisTurn = true;
     var gray = game.add.filter('Gray');
     unit.filters = [gray];
     this.getCurrentPlayer().army.units.push(unit);
+    game.add.audio('purchase', 2).play();
   }
 
   this.buildScreen = this.buildScreen.destroy();
   this.turnState = "selectingUnit";
+  currentPlayerGold.setText("Gold: " + battle.players[battle.currentPlayer - 1].gold);
   this.currentSelectedUnit = null;
 };
 
