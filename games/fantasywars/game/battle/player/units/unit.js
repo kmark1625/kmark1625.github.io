@@ -35,7 +35,7 @@ Unit.prototype.move = function() {
   // Moves unit along path
   // path is in the format: [location1, location2, ..., targetLocation]
   this.animations.play("move");
-  this.moveSound.play('', 0, 1, false, false);
+  // this.moveSound.play('', 0, 1, false, false);
   var nextTile = this.walkPath[this.walkPath.length - 1];
 
   if (!nextTile)
@@ -161,6 +161,7 @@ Unit.prototype.getAttackDamage = function(enemyDefense, terrainDefense) {
 
 Unit.prototype.die = function() {
   //TODO: Destroys unit and removes from map
+  game.add.tween(this).to({alpha: 0}, 1000, "Linear", true);
   this.alive = false;
   this.healthText.destroy();
   this.destroy();
