@@ -3,10 +3,9 @@
 ComputerPlayer.prototype = new Player();
 ComputerPlayer.prototype.constructor = ComputerPlayer;
 
-function ComputerPlayer(army, hqPos) {
+function ComputerPlayer(army) {
   this.army = army;
   this.active = false;  // boolean to be used to determine which players turn it is
-  this.hqPosition = hqPos;
   this.mode = null;
   this.battle = null;
 };
@@ -15,6 +14,10 @@ ComputerPlayer.prototype.update = function(map, myTurn) {
   this.army.update(map);
 };
 
+
+ComputerPlayer.prototype.handleComputerMove = function() {
+  return this.mode.handleComputerMove();
+};
 
 // Computer Modes - Aggressive, Defensive, Patrol
 ComputerPlayer.prototype.updateMode = function(mode) {
@@ -34,11 +37,3 @@ ComputerPlayer.prototype.updateMode = function(mode) {
   }
 };
 
-ComputerPlayer.prototype.playTurn = function() {
-  nextMode = this.mode.execute();
-  this.updateMode(nextMode);
-};
-
-ComputerPlayer.prototype.handleComputerMove = function() {
-  return this.mode.handleComputerMove();
-}
