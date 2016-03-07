@@ -10,19 +10,24 @@
     <name>Blog Author</name>
   </author>
   <entry>
-    <title>What is a CSS Pre-Processor and why should I use one?</title>
+    <title>What is a CSS Pre-Processor and why should you should use one?</title>
     <link rel="alternate" href="http://blog.url.com/2016/03/04/css-preprocessor.html"/>
     <id>http://blog.url.com/2016/03/04/css-preprocessor.html</id>
     <published>2016-03-03T18:00:00-06:00</published>
-    <updated>2016-03-04T14:22:03-06:00</updated>
+    <updated>2016-03-06T12:02:02-06:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;This article seeks to explain what a CSS preprocessor is and why you should use it. In addition, I explain my own experience using Bourbon along with Neat and Bitters to style sites. These tools allow for an easy way to maintain modular code in your CSS as well as get a good-lucking site off the ground quickly.&lt;/p&gt;
+    <content type="html">&lt;p&gt;This article seeks to explain what a CSS preprocessor is and why you should use it. In addition, I explain my own experience using Bourbon along with Neat and Bitters to style sites. These tools allow for an easy way to maintain modular code in your CSS as well as get a good-looking site off the ground quickly.&lt;/p&gt;
 
-&lt;p&gt;One of the main benefits of a CSS preprocessor is its ability to allow you to have more modular code. You can have partials that apply to different parts of your application and then load them in with @import. In addition, you can use all of the normal features of CSS and pick and choose from mixins that are available. Mixins are a useful way to get a group of CSS stylings with minimal code. Another main feature is the ability to have variable names. This can be useful for font-stylings or other settings as you can apply a set of styles once and change it out on the fly easily.&lt;/p&gt;
+&lt;p&gt;One of the main benefits of a CSS preprocessor is its ability to allow you to have more modular code for your CSS. You can have partials that apply to different parts of your application and then load them in with @import. In addition, you can use all of the normal features of CSS and pick and choose from mixins that are available. Mixins are a useful way to get a group of CSS stylings with minimal code. Another main feature is the ability to have variable names. This can be useful for font-stylings or other settings as you can apply a set of styles once and change it out on the fly easily.&lt;/p&gt;
 
 &lt;p&gt;There is not a good reason to not use a CSS pre-processor. Mostly because you can style it with your normal CSS but have additional features. A great way to keep your styles organized is with nesting. Sass allows you to nest your CSS styles which makes it a lot easier to keep a coherent grouping. This does not, however, offer any performance benefits but it is useful to reduce complexity of your CSS for large sites.&lt;/p&gt;
+
+&lt;h1 id="bourbon-neat-and-bitters"&gt;Bourbon, Neat, and Bitters&lt;/h1&gt;
+&lt;p&gt;Bourbon is a library built for Sass. It includes vendor prefixes and mixins that allow you to write CSS more concisely. Neat is a semantic grid framework for Sass. Bitters is a predefined set of styles and mixins for use with Bourbon. All three of these tools are open-source projects maintained by Thoughtbot.&lt;/p&gt;
+
+&lt;p&gt;I had a great time using these tools to style my blog website. The use of partials helped to keep my .scss files organized. It also gave me greater control to style different aspects of my website. The semantic grid system provided by Neat was easy to use to layout content on a page.&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -30,7 +35,7 @@
     <link rel="alternate" href="http://blog.url.com/2016/03/03/middleman.html"/>
     <id>http://blog.url.com/2016/03/03/middleman.html</id>
     <published>2016-03-02T18:00:00-06:00</published>
-    <updated>2016-03-04T14:18:24-06:00</updated>
+    <updated>2016-03-06T15:19:00-06:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -39,6 +44,12 @@
 &lt;p&gt;First of all, you might ask why should you use a static site instead of something like a Ruby on Rails site. A static site is much easier to host (doesn't require additional server/database overhead other than the files themselves) and often results in performance and security benefits. A static site generator helps in the creation of a static site by allowing you to write code in embedded ruby, use css preprocessors or markdown, and the static site generator will translate the code into base css/html.&lt;/p&gt;
 
 &lt;p&gt;There are many concepts with a Middleman site that is similar to rails. Middleman shares a similar asset pipeline along with file structure. In addition, you can continue to write embedded ruby into your files.&lt;/p&gt;
+
+&lt;h1 id="assets"&gt;Assets&lt;/h1&gt;
+&lt;p&gt;Middleman brings with it an asset pipeline which is very similar to that of rails. We can bring in most of the relevant assets we need through the Gemfile, just as we would in rails.&lt;/p&gt;
+
+&lt;h1 id="partials-and-embedded-ruby"&gt;Partials and Embedded Ruby&lt;/h1&gt;
+&lt;p&gt;We are able to split out parts of our code into partials. We can then use these partials in our html just as we would in a rails project. We can pass in variable values. Data can be stored in a database.yaml file which can be read in and easily updated with new information.&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -46,42 +57,31 @@
     <link rel="alternate" href="http://blog.url.com/2016/03/02/project-euler.html"/>
     <id>http://blog.url.com/2016/03/02/project-euler.html</id>
     <published>2016-03-01T18:00:00-06:00</published>
-    <updated>2016-03-03T20:43:02-06:00</updated>
+    <updated>2016-03-06T18:22:54-06:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;I set out with the goal of solving as many problems of Project Euler as I could in 3 months. Below is a set of lessons that I learned along the way from each set of problems. I decided to approach the problems sequentially and would not move on from a given set until all problems in that set were completed. I had to learn about numerous topics in coding and mathematics in order to complete the challenge. I hope this article will be helpful for a reader who is seeking to attempt a similar challenge for themselves or just a reader who is curious what the journey is like.&lt;/p&gt;
-
-&lt;h2 id="problems-1-25"&gt;Problems 1-25&lt;/h2&gt;
-
-&lt;h2 id="math"&gt;Math&lt;/h2&gt;
-
-&lt;p&gt;There are some fundamental mathematical concepts that are required in order to solve the first set of problems. Prime numbers and factors occur over and over again throughout the first set of problems. Other math concepts that come up are usually explained in enough detail in the problem statement to get by.&lt;/p&gt;
+    <content type="html">&lt;p&gt;I set out with the goal of solving as many problems of Project Euler as I could in 3 months. Below is a set of lessons that I learned along the way from each set of problems. I decided to approach the problems sequentially and would not move on from a given set until all problems in that set were completed. I had to learn about numerous topics in coding and mathematics in order to complete the challenge. I hope this article will be helpful for a reader who is seeking to attempt a similar challenge for themselves or just a reader who is curious what the journey is like. Below is a list of concepts that I found very useful for the first set of problems.&lt;/p&gt;
 
 &lt;h3 id="prime-numbers"&gt;Prime Numbers&lt;/h3&gt;
 
-&lt;p&gt;Explanation of prime numbers.&lt;/p&gt;
+&lt;p&gt;Prime numbers occur over and over again throughout the first set of problems. It is essential to know both how to efficiently generate a list of prime numbers as well as determine if a given number is prime. A prime is a number that is only divisible by one and itself. You can make optimizations to your prime checker by only iterating through 2 to the square root of the number. In some problems, it is useful to cache a sorted list of primes that you can then check to see if the number is in the list.&lt;/p&gt;
 
 &lt;h3 id="factors"&gt;Factors&lt;/h3&gt;
 
-&lt;p&gt;Explanation of factors.&lt;/p&gt;
-
-&lt;h2 id="programming"&gt;Programming&lt;/h2&gt;
+&lt;p&gt;Determining factors of a number is essential. Two common ideas that come up are greatest common factor and least common factor. It will be useful to be able to calculate these two quantities and to make use of them.&lt;/p&gt;
 
 &lt;h3 id="test-driven-development"&gt;Test Driven Development&lt;/h3&gt;
 
-&lt;p&gt;I found test driven development to be essential in order to determine if an answer was correct.&lt;/p&gt;
+&lt;p&gt;I found test driven development to be essential in order to determine if an answer was correct. Many of the questions often ask for extreme numbers for their problems, but they generally give a simple case when explaining them. Often, you can use that simple case to base a test suite on. Then, you can ensure that you pass the simple case before attempting to generalize or extend your solution. I found coding this way greatly decreased the time spent debugging at the end.&lt;/p&gt;
 
 &lt;h3 id="itertools-and-generator-functions"&gt;Itertools and Generator Functions&lt;/h3&gt;
 
-&lt;p&gt;Example from itertools and generator functions.&lt;/p&gt;
+&lt;p&gt;I used python exclusively to solve the first set of problems. I found itertools invaluable for permutations and combintations. In addition, generator functions were essential to quickly calculate values on the fly without having to generate and entire list of all values.&lt;/p&gt;
 
 &lt;h3 id="object-oriented-approach"&gt;Object-Oriented Approach&lt;/h3&gt;
 
-&lt;p&gt;I found some problems lent themselves to solving with an object-oriented approach&lt;/p&gt;
-
-&lt;h2 id="problems-26-50"&gt;Problems 26-50&lt;/h2&gt;
-&lt;p&gt;Lessons learned for solving problems 26-50&lt;/p&gt;
+&lt;p&gt;I found some problems lent themselves to solving with an object-oriented approach. For example, there was a problem that required use of dates. I found it was easy for me to write this method with an object oriented approach as it was much easier to test each part of the code.&lt;/p&gt;
 </content>
   </entry>
   <entry>
