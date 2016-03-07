@@ -26,38 +26,27 @@
     </li>
   </ul>
 </nav>
-      <p>I set out with the goal of solving as many problems of Project Euler as I could in 3 months. Below is a set of lessons that I learned along the way from each set of problems. I decided to approach the problems sequentially and would not move on from a given set until all problems in that set were completed. I had to learn about numerous topics in coding and mathematics in order to complete the challenge. I hope this article will be helpful for a reader who is seeking to attempt a similar challenge for themselves or just a reader who is curious what the journey is like.</p>
-
-<h2 id="problems-1-25">Problems 1-25</h2>
-
-<h2 id="math">Math</h2>
-
-<p>There are some fundamental mathematical concepts that are required in order to solve the first set of problems. Prime numbers and factors occur over and over again throughout the first set of problems. Other math concepts that come up are usually explained in enough detail in the problem statement to get by.</p>
+      <p>I set out with the goal of solving as many problems of Project Euler as I could in 3 months. Below is a set of lessons that I learned along the way from each set of problems. I decided to approach the problems sequentially and would not move on from a given set until all problems in that set were completed. I had to learn about numerous topics in coding and mathematics in order to complete the challenge. I hope this article will be helpful for a reader who is seeking to attempt a similar challenge for themselves or just a reader who is curious what the journey is like. Below is a list of concepts that I found very useful for the first set of problems.</p>
 
 <h3 id="prime-numbers">Prime Numbers</h3>
 
-<p>Explanation of prime numbers.</p>
+<p>Prime numbers occur over and over again throughout the first set of problems. It is essential to know both how to efficiently generate a list of prime numbers as well as determine if a given number is prime. A prime is a number that is only divisible by one and itself. You can make optimizations to your prime checker by only iterating through 2 to the square root of the number. In some problems, it is useful to cache a sorted list of primes that you can then check to see if the number is in the list.</p>
 
 <h3 id="factors">Factors</h3>
 
-<p>Explanation of factors.</p>
-
-<h2 id="programming">Programming</h2>
+<p>Determining factors of a number is essential. Two common ideas that come up are greatest common factor and least common factor. It will be useful to be able to calculate these two quantities and to make use of them.</p>
 
 <h3 id="test-driven-development">Test Driven Development</h3>
 
-<p>I found test driven development to be essential in order to determine if an answer was correct.</p>
+<p>I found test driven development to be essential in order to determine if an answer was correct. Many of the questions often ask for extreme numbers for their problems, but they generally give a simple case when explaining them. Often, you can use that simple case to base a test suite on. Then, you can ensure that you pass the simple case before attempting to generalize or extend your solution. I found coding this way greatly decreased the time spent debugging at the end.</p>
 
 <h3 id="itertools-and-generator-functions">Itertools and Generator Functions</h3>
 
-<p>Example from itertools and generator functions.</p>
+<p>I used python exclusively to solve the first set of problems. I found itertools invaluable for permutations and combintations. In addition, generator functions were essential to quickly calculate values on the fly without having to generate and entire list of all values.</p>
 
 <h3 id="object-oriented-approach">Object-Oriented Approach</h3>
 
-<p>I found some problems lent themselves to solving with an object-oriented approach</p>
-
-<h2 id="problems-26-50">Problems 26-50</h2>
-<p>Lessons learned for solving problems 26-50</p>
+<p>I found some problems lent themselves to solving with an object-oriented approach. For example, there was a problem that required use of dates. I found it was easy for me to write this method with an object oriented approach as it was much easier to test each part of the code.</p>
 
       <footer>
   <p>Design and code by Kevin Mark</p>
