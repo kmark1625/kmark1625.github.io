@@ -16,6 +16,17 @@ function Unit(pos, player) {
   // Phaser.Sprite.call(this, game, pos.canvasX, pos.canvasY, 'spritename');
 };
 
+Unit.prototype.useSheet = function(key, pos) {
+  Phaser.Sprite.call(this, game, pos.canvasX(), pos.canvasY(), key);
+  game.add.existing(this);
+};
+
+Unit.prototype.fitToTile = function() {
+  this.width = TILESCALE;
+  this.height = TILESCALE;
+  this.faceScale = Math.abs(this.scale.x);
+};
+
 Unit.prototype.updateUnit = function(map, turnState) {
   //TODO: Update method
   this.updateDisplayHealth();
@@ -46,14 +57,15 @@ Unit.prototype.move = function() {
   if (!nextTile)
     return true;
 
+  var face = this.faceScale != null ? this.faceScale : 1;
   if (nextTile.canvasX() > this.x) {
     this.x += 2;
-    this.scale.x = 1;
+    this.scale.x = face;
     this.anchor.setTo(0, 0);
   }
   if(nextTile.canvasX() < this.x) {
     this.x -= 2;
-    this.scale.x = -1;
+    this.scale.x = -face;
     this.anchor.setTo(1, 0);
   }
 

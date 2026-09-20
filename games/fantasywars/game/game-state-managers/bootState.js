@@ -1,6 +1,13 @@
 var bootState = {
 
 	create: function() {
+    game.canvas.id = 'canvasGame';
+    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.pageAlignHorizontally = true;
+    game.scale.pageAlignVertically = true;
+    game.scale.refresh();
+
 		// Set constants for Game
     TILESCALE = 32;
 

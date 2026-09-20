@@ -1,5 +1,5 @@
 window.onload = function() {
-  game = new Phaser.Game(800, 600, Phaser.AUTO, 'canvasGame');
+  game = new Phaser.Game(1000, 800, Phaser.AUTO, 'game-container');
   _addGameStates();
 
   game.state.start("bootState");

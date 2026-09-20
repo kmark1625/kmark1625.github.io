@@ -447,8 +447,9 @@ Battle.prototype.updateUnitSpriteDisplay = function() {
         this.unitSpriteDisplay = null;
       }
       var unit = this.unitSpriteDisplay = new unitClass(new Pos(20, 7), this.currentSelectedUnit.player);
-      unit.scale.x = 3;
-      unit.scale.y = 3;
+      unit.width = TILESCALE * 3;
+      unit.height = TILESCALE * 3;
+      unit.faceScale = Math.abs(unit.scale.x);
       unit.animations.play("stand", 2, true);
     }
   }

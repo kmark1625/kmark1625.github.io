@@ -3,11 +3,13 @@ EagleWatch.prototype.constructor = EagleWatch;
 
 function EagleWatch(pos, player) {
   this.pos = pos;
-  Phaser.Sprite.call(this, game, pos.canvasX(), pos.canvasY(), "sprElves" + player);
-  game.add.existing(this);
-  this.animations.add("stand", [70, 71], 2);
-  this.animations.add("move", [72, 73], 8);
-  this.animations.add("attack", [74, 75, 76, 77], 8);
+  this.player = player;
+  this.useSheet("sprElves" + player, pos);
+  this.animations.add("stand", ["70", "71"], 2);
+  this.animations.add("move", ["72", "73"], 8);
+  this.animations.add("attack", ["74", "75", "76", "77"], 8);
+  this.animations.play("stand");
+  this.fitToTile();
   this.moveSound = game.add.audio("move");
   this.attackSound = game.add.audio("slash");
   this.name = "Elf EagleWatch";

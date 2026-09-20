@@ -14,18 +14,31 @@ var p1ArmySelectState = {
 
   create: function() {
     _setBackgroundImage('parchment');
-    var selectArmyText = this.add.text(265, 20, "Player 1, Choose Your Army", {font: "bold 24pt Herculanum", align: "left"});
-    // pass to new MenuButton(x, y, spriteKey, targetState, tilemap name, armykey, audio)
-    var dwarfImage = this.add.image(20, 70, "dwarfImage");
-    var dwarfArmyButton = new MenuButton(450, 110, "armySelectionButtons", "p2ArmySelectState", this.gameMode, this.mapKey, "dwarf", "armyKey2", "flash", 2, 2, 3, 2);
+    var selectArmyText = this.add.text(game.width / 2, 28, "Player 1, Choose Your Army", {font: "bold 24pt Herculanum", align: "center"});
+    selectArmyText.anchor.set(0.5, 0);
 
-    var elfImage = this.add.image(20, 245, "elfImage");
-    var elfArmyButton = new MenuButton(450, 285, "armySelectionButtons", "p2ArmySelectState", this.gameMode, this.mapKey, "elf", "armyKey2", "flash", 0, 0, 1, 0);
+    // Red row of army_select_menu_icons.png: dwarf, elf, orc
+    var dwarfArmyButton = _addArmyIconButton(74, 170, 260, 0, "p2ArmySelectState", this.gameMode, this.mapKey, "dwarf", "armyKey2");
+    var elfArmyButton = _addArmyIconButton(370, 170, 260, 1, "p2ArmySelectState", this.gameMode, this.mapKey, "elf", "armyKey2");
+    var orcArmyButton = _addArmyIconButton(666, 170, 260, 2, "p2ArmySelectState", this.gameMode, this.mapKey, "orc", "armyKey2");
 
-    var orcImage = this.add.image(20, 420, "orcImage");
-    var orcArmyButton = new MenuButton(450, 462, "armySelectionButtons", "p2ArmySelectState", this.gameMode, this.mapKey, "orc", "armyKey2", "flash", 4, 4, 5, 4);
-
+    _addArmyIconLabel(74, 170, 260, "Dwarves");
+    _addArmyIconLabel(370, 170, 260, "Elves");
+    _addArmyIconLabel(666, 170, 260, "Orcs");
   }
+}
+
+function _addArmyIconButton(x, y, size, frame, targetState, gameMode, mapKey, armyKey1, armyKey2) {
+  var button = new MenuButton(x, y, "armySelectIcons", targetState, gameMode, mapKey, armyKey1, armyKey2, "flash", frame, frame, frame, frame);
+  button.width = size;
+  button.height = size;
+  return button;
+}
+
+function _addArmyIconLabel(x, y, size, label) {
+  var text = game.add.text(x + size / 2, y + size + 12, label, {font: "bold 18pt Herculanum", align: "center"});
+  text.anchor.set(0.5, 0);
+  return text;
 }
 
 function _setBackgroundImage(imgKey) {

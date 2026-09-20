@@ -38,13 +38,13 @@ function _loadAudio() {
 };
 
 function _loadImages() {
-  game.load.image('logo', 'game/assets/logo.jpg');
+  game.load.image('logo', 'game/assets/logo.png');
   game.load.image('parchment', 'game/assets/menus/ui/parchmentBackdrop.png');
   game.load.image('bottomMenuBar', 'game/assets/menus/ui/menuBar.png');
   game.load.image('topMenuBar', 'game/assets/menus/ui/topMenuBar.png');
   game.load.image('statsMenu', 'game/assets/menus/ui/statsMenu.png');
   game.load.image('dwarfImage','game/assets/menus/images/dwarfImage.png');
-  game.load.image('elfImage','game/assets/menus/images/elfImage.png');
+  game.load.image('elfImage','game/assets/menus/images/elf_army_select.png');
   game.load.image('orcImage','game/assets/menus/images/orcImage.png');
   game.load.image('unitBuildScreen','game/assets/menus/ui/unitBuildScreen.png');
   game.load.image('instructions', 'game/assets/menus/ui/instructions.png');
@@ -58,6 +58,7 @@ function _loadSpritesheets() {
   game.load.spritesheet("mainMenuButtons", "game/assets/menus/buttons/mainMenuButtons.png", 193, 71);
   game.load.spritesheet("battleUIButtons", "game/assets/menus/buttons/battleUIButtons.png", 160, 64);
   game.load.spritesheet("armySelectionButtons", "game/assets/menus/buttons/armySelectionButtons.png", 224, 71);
+  game.load.spritesheet("armySelectIcons", "game/assets/menus/images/army_select_menu_icons.png", 512, 512);
   game.load.spritesheet('muteButton','game/assets/menus/buttons/muteButton.png', 32, 32);
   game.load.spritesheet("victoryButton", 'game/assets/menus/buttons/victoryStateButtons.png', 193, 71);
 
@@ -68,12 +69,12 @@ function _loadSpritesheets() {
   game.load.tilemap("scorpionValley", "game/assets/maps/Scorpion_Valley.json", null, Phaser.Tilemap.TILED_JSON );
   game.load.image("tilesheet", "game/assets/maps/fantasy_wars_tilesheet.png");
 
-  game.load.spritesheet("sprDwarves1", "game/assets/spritesheets/dwarf_units.png", 32, 32);
-  game.load.spritesheet("sprDwarves2", "game/assets/spritesheets/dwarf_units2.png", 32, 32);
-  game.load.spritesheet("sprElves1", "game/assets/spritesheets/elf_units.png", 32, 32);
-  game.load.spritesheet("sprElves2", "game/assets/spritesheets/elf_units2.png", 32, 32);
-  game.load.spritesheet("sprOrcs1", "game/assets/spritesheets/orcs_units.png", 32, 32);
-  game.load.spritesheet("sprOrcs2", "game/assets/spritesheets/orcs_units2.png", 32, 32);
+  game.load.atlasJSONHash("sprDwarves1", "game/assets/spritesheets/dwarf_units_new.png", "game/assets/spritesheets/dwarf_units.json");
+  game.load.atlasJSONHash("sprDwarves2", "game/assets/spritesheets/blue_dwarf_spritesheet_positions_updated.png", "game/assets/spritesheets/dwarf_units_2.json");
+  game.load.atlasJSONHash("sprElves1", "game/assets/spritesheets/elf_units_new.png", "game/assets/spritesheets/elf_units.json");
+  game.load.atlasJSONHash("sprElves2", "game/assets/spritesheets/elf_units2_new.png", "game/assets/spritesheets/elf_units2.json");
+  game.load.atlasJSONHash("sprOrcs1", "game/assets/spritesheets/orcs_units_new.png", "game/assets/spritesheets/orcs_units.json");
+  game.load.atlasJSONHash("sprOrcs2", "game/assets/spritesheets/orcs_units2_new.png", "game/assets/spritesheets/orcs_units2.json");
   game.load.spritesheet("selectionTiles", "game/assets/spritesheets/select_tiles.png", 32, 32);
   game.load.spritesheet("blue_flag", "game/assets/spritesheets/blue_flag.png", 8, 8);
   game.load.spritesheet("red_flag", "game/assets/spritesheets/red_flag.png", 8, 8);

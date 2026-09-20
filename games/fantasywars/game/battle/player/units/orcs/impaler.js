@@ -3,11 +3,13 @@ Impaler.prototype.constructor = Impaler;
 
 function Impaler(pos, player) {
   this.pos = pos;
-  Phaser.Sprite.call(this, game, pos.canvasX(), pos.canvasY(), "sprOrcs" + player);
-  game.add.existing(this);
-  this.animations.add("stand", [10, 11], 2);
-  this.animations.add("move", [12, 13], 8);
-  this.animations.add("attack", [14, 15, 16, 17], 8);
+  this.player = player;
+  this.useSheet("sprOrcs" + player, pos);
+  this.animations.add("stand", ["10", "11"], 2);
+  this.animations.add("move", ["12", "13"], 8);
+  this.animations.add("attack", ["14", "15", "16", "17"], 8);
+  this.animations.play("stand");
+  this.fitToTile();
   this.moveSound = game.add.audio("move");
   this.attackSound = game.add.audio("bow");
   this.name = "Orc Impaler";
@@ -18,5 +20,4 @@ function Impaler(pos, player) {
   this.range = [1,2];
   this.cost = 100;
   this.player = player;
-
 }

@@ -3,11 +3,13 @@ Elite.prototype.constructor = Elite;
 
 function Elite(pos, player) {
   this.pos = pos;
-  Phaser.Sprite.call(this, game, pos.canvasX(), pos.canvasY(), "sprElves" + player);
-  game.add.existing(this);
-  this.animations.add("stand", [10, 11], 2);
-  this.animations.add("move", [12, 13], 8);
-  this.animations.add("attack", [14, 15, 16, 17], 8);
+  this.player = player;
+  this.useSheet("sprElves" + player, pos);
+  this.animations.add("stand", ["10", "11"], 2);
+  this.animations.add("move", ["12", "13"], 8);
+  this.animations.add("attack", ["14", "15", "16", "17"], 8);
+  this.animations.play("stand");
+  this.fitToTile();
   this.moveSound = game.add.audio("move");
   this.attackSound = game.add.audio("slash");
   this.name = "Elf Elite";

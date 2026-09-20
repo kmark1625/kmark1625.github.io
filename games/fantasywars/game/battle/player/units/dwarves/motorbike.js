@@ -3,11 +3,13 @@ MotorBike.prototype.constructor = MotorBike;
 
 function MotorBike(pos, player) {
   this.pos = pos;
-  Phaser.Sprite.call(this, game, pos.canvasX(), pos.canvasY(), "sprDwarves" + player);
-  game.add.existing(this);
-  this.animations.add("stand", [40, 41], 8);
-  this.animations.add("move", [42, 43], 12);
-  this.animations.add("attack", [44, 45, 46, 47], 12);
+  this.player = player;
+  this.useSheet("sprDwarves" + player, pos);
+  this.animations.add("stand", ["40", "41"], 8);
+  this.animations.add("move", ["42", "43"], 12);
+  this.animations.add("attack", ["44", "45"], 12);
+  this.animations.play("stand");
+  this.fitToTile();
   this.name = "Dwarf MotorBike";
   this.moveSound = game.add.audio("move");
   this.attackSound = game.add.audio("rifle");

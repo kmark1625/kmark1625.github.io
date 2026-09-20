@@ -2,12 +2,14 @@ Catapult.prototype = new UnitArtillery();
 Catapult.prototype.constructor = Catapult;
 
 function Catapult(pos, player) {
-	this.pos = pos;
-  Phaser.Sprite.call(this, game, pos.canvasX(), pos.canvasY(), "sprOrcs" + player);
-  game.add.existing(this);
-  this.animations.add("stand", [50, 51], 2);
-  this.animations.add("move", [52, 53], 8);
-  this.animations.add("attack", [54, 55, 56, 57], 8);
+  this.pos = pos;
+  this.player = player;
+  this.useSheet("sprOrcs" + player, pos);
+  this.animations.add("stand", ["50", "51"], 2);
+  this.animations.add("move", ["52", "53"], 8);
+  this.animations.add("attack", ["54", "55", "56", "57"], 8);
+  this.animations.play("stand");
+  this.fitToTile();
   this.moveSound = game.add.audio("move");
   this.attackSound = game.add.audio("mortarShot");
   this.name = "Orc Catapult";
@@ -18,5 +20,4 @@ function Catapult(pos, player) {
   this.range = [3,4];
   this.cost = 500;
   this.player = player;
-
 }

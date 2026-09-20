@@ -15,22 +15,16 @@ var p2ArmySelectState = {
 
   create: function() {
     _setBackgroundImage('parchment');
-    var selectArmyText = this.add.text(265, 20, "Player 2, Choose Your Army", {font: "bold 24pt Herculanum", align: "left"});
-    // pass to new MenuButton(x, y, spriteKey, targetState, tilemap name, armykey, audio)
-    var dwarfImage = this.add.image(20, 70, "dwarfImage");
-    var dwarfArmyButton = new MenuButton(450, 110, "armySelectionButtons", "battleState", this.gameMode, this.mapKey, this.armyKey1, "dwarf", "flash", 2, 2, 3, 2);
+    var selectArmyText = this.add.text(game.width / 2, 28, "Player 2, Choose Your Army", {font: "bold 24pt Herculanum", align: "center"});
+    selectArmyText.anchor.set(0.5, 0);
 
-    var elfImage = this.add.image(20, 245, "elfImage");
-    var elfArmyButton = new MenuButton(450, 285, "armySelectionButtons", "battleState", this.gameMode, this.mapKey, this.armyKey1, "elf", "flash", 0, 0, 1, 0);
+    // Blue row of army_select_menu_icons.png: dwarf, elf, orc
+    var dwarfArmyButton = _addArmyIconButton(74, 170, 260, 3, "battleState", this.gameMode, this.mapKey, this.armyKey1, "dwarf");
+    var elfArmyButton = _addArmyIconButton(370, 170, 260, 4, "battleState", this.gameMode, this.mapKey, this.armyKey1, "elf");
+    var orcArmyButton = _addArmyIconButton(666, 170, 260, 5, "battleState", this.gameMode, this.mapKey, this.armyKey1, "orc");
 
-    var orcImage = this.add.image(20, 420, "orcImage");
-    var orcArmyButton = new MenuButton(450, 462, "armySelectionButtons", "battleState", this.gameMode, this.mapKey, this.armyKey1, "orc", "flash", 4, 4, 5, 4);
-
+    _addArmyIconLabel(74, 170, 260, "Dwarves");
+    _addArmyIconLabel(370, 170, 260, "Elves");
+    _addArmyIconLabel(666, 170, 260, "Orcs");
   }
 }
-
-function _setBackgroundImage(imgKey) {
-  var logo = game.add.image(0, 0, imgKey);
-  logo.width = game.width;
-  logo.height = game.height;
-};

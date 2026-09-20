@@ -3,11 +3,13 @@ GilaMonster.prototype.constructor = GilaMonster;
 
 function GilaMonster(pos, player) {
   this.pos = pos;
-  Phaser.Sprite.call(this, game, pos.canvasX(), pos.canvasY(), "sprOrcs" + player);
-  game.add.existing(this);
-  this.animations.add("stand", [40, 41], 2);
-  this.animations.add("move", [42, 43], 8);
-  this.animations.add("attack", [44, 45, 46, 47], 8);
+  this.player = player;
+  this.useSheet("sprOrcs" + player, pos);
+  this.animations.add("stand", ["40", "41"], 2);
+  this.animations.add("move", ["42", "43"], 8);
+  this.animations.add("attack", ["44", "45", "46", "47"], 8);
+  this.animations.play("stand");
+  this.fitToTile();
   this.moveSound = game.add.audio("move");
   this.attackSound = game.add.audio("slash");
   this.name = "Orc GilaMonster";
@@ -18,5 +20,4 @@ function GilaMonster(pos, player) {
   this.range = [1,1];
   this.cost = 600;
   this.player = player;
-
 }
